@@ -1,69 +1,143 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+:root{
+    --color_select_box:#860f00;
+    --color_nav_bar:#333733;
+    --color_main_display:#1b1c1a;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+/* Reset default browser margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:62.5%;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+    font-size:2rem;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.topbar {
+    display: flex;
+    flex-direction:row;
+    justify-content:flex-end;
+    align-items: center;
+    height: 9vh; /* Top bar height */
+    width: 100vw; /* Width of top bar, 80% of viewport width */
+    background-color: var(--color_main_display);
+    color: yellow;
+    position: fixed;
+    margin:0;
+    top:0;
+    padding-right:3rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.sidebar {
+    display:flex;
+    flex-direction:column;
+    height: 100vh; /* Full height */
+    width: 20vw; /* 20% of viewport width */
+    background-color: black;
+    color: red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right:0;
+    z-index: 1; /* Ensure it stays below the header */
+}
+
+.main {
+    margin-left: 20vw; /* Offset by sidebar width */
+    margin-top: 5vh; /* Offset by top bar height */
+    width: 80vw; /* 80% of viewport width */
+    height: 95vh; /* 95% of viewport height */
+    background-color: aqua;
+    color: black;
+    display: flex;
+    align-items: flex-start; /* Center content vertically */
+    justify-content: flex-end; /* Center content horizontally */
+    padding:4rem 3rem;
+
+}
+
+.linkedin-icon{
+    padding:8px;
+    font-size: 1.7rem; /* Adjust size */
+    color: #0077b5; /* LinkedIn color */
+    margin: 0; /* Spacing around the icon */
+    text-decoration: none; /* Remove underline from link */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    overflow: hidden; /* Prevent overflow */
+    margin-bottom: 5px;
+}
+
+.github-icon{
+    padding:8px;
+    font-size: 1.7rem; /* Adjust size */
+    color: white; /* LinkedIn color */
+    margin: 0; /* Spacing around the icon */
+    text-decoration: none; /* Remove underline from link */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    overflow: hidden; /* Prevent overflow */
+    margin-bottom: 5px;
+}
+
+
+
+/* Styles for the About component */
+.about-container {
+    position: relative; /* This allows the tooltip to be positioned absolutely within this container */
+    display: inline-block; /* Container should only take up as much space as needed */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+}
+
+.about-text {
+    font-size: 0.8rem; /* Font size for the About text */
+    color: white; /* Text color */
+    padding: 5px 1.2rem; /* Padding around the text */
+    padding-bottom: 6px;
+    border-radius: 100px; /* Round the corners of the text box */
+    background-color: var(--color_main_display);; /* Background color of the text box */
+    text-align: center; /* Center the text */
+    border:1px solid white;
+    margin:0;
+}
+
+.tooltip {
+    visibility: hidden; /* Hide the tooltip by default */
+    width: 10rem; /* Width of the tooltip */
+    background-color: black; /* Background color of the tooltip */
+    color: white; /* Text color of the tooltip */
+    text-align: center; /* Center the text inside the tooltip */
+    border-radius: 5px; /* Round the corners of the tooltip */
+    padding: 15px; /* Padding inside the tooltip */
+    position: absolute; /* Position the tooltip absolutely */
+    top: 125%; /* Place the tooltip below the About text */
+    left: 50%; /* Center horizontally */
+    margin-left: -125px; /* Adjust to center horizontally (half of tooltip width) */
+    z-index: 1; /* Ensure tooltip is above other elements */
+    opacity: 0; /* Initially hide the tooltip */
+    transition: opacity 0.3s; /* Smooth transition for opacity */
+    font-size: 1.2rem; /* Increase the font size of the tooltip text */
+}
+
+.tooltip p {
+    margin: 0; /* Remove default margin */
+}
+
+.about-container:hover .tooltip {
+    visibility: visible; /* Show the tooltip on hover */
+    opacity: 0.85; /* Make the tooltip fully visible */
 }
