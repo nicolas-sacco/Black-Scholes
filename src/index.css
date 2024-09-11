@@ -1,6 +1,6 @@
 :root{
     --color_select_box:#860f00;
-    --color_nav_bar:#333733;
+    --color_nav_bar:#3d3e3d;
     --color_main_display:#1b1c1a;
 }
 
@@ -19,7 +19,7 @@ html, body {
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
     overflow-x: hidden;
-    font-size:2rem;
+    font-size:62.5%;
 }
 
 .container {
@@ -40,7 +40,7 @@ html, body {
     position: fixed;
     margin:0;
     top:0;
-    padding-right:3rem;
+    padding-right:9rem;
 }
 
 .sidebar {
@@ -48,14 +48,37 @@ html, body {
     flex-direction:column;
     height: 100vh; /* Full height */
     width: 20vw; /* 20% of viewport width */
-    background-color: black;
-    color: red;
+    background-color: var(--color_nav_bar);
+    color: white;
     position: fixed;
     top: 0;
     left: 0;
     bottom:0;
     right:0;
     z-index: 1; /* Ensure it stays below the header */
+    padding:4rem 2.5rem;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+.sidebar::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent; /* No background for the track */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #8b8787; /* Dark grey color for the scrollbar */
+    border-radius: 20px; /* Rounded corners for the scrollbar thumb */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #c2bdbd; /* Slightly lighter grey on hover */
 }
 
 .main {
@@ -63,35 +86,198 @@ html, body {
     margin-top: 5vh; /* Offset by top bar height */
     width: 80vw; /* 80% of viewport width */
     height: 95vh; /* 95% of viewport height */
-    background-color: aqua;
-    color: black;
+    background-color: var(--color_main_display);
+    color:white;
     display: flex;
-    align-items: flex-start; /* Center content vertically */
-    justify-content: flex-end; /* Center content horizontally */
-    padding:4rem 3rem;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start; /* Center content horizontally */
+    padding:11rem 9rem;
+    font-size:1.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
 }
 
+.main::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.main::-webkit-scrollbar-track {
+    background: transparent; /* No background for the track */
+}
+
+.main::-webkit-scrollbar-thumb {
+    background: #8b8787; /* Dark grey color for the scrollbar */
+    border-radius: 20px; /* Rounded corners for the scrollbar thumb */
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+    background: #c2bdbd; /* Slightly lighter grey on hover */
+}
+
+.main-title{
+    font-size: 5rem;
+    font-weight:900;
+    padding-bottom:9px;
+}
+
+.input-table-display {
+    font-size: 10rem; 
+    padding: 1rem;            /* Optional: Add some padding for better appearance */
+    overflow-x: auto;         /* Optional: Add horizontal scroll if content overflows */
+}
+
+table {
+    width: 100%; /* Ensure the table takes the full width of its container */
+    border-collapse: collapse; /* Ensure borders are collapsed for a clean look */
+}
+
+th, td {
+    border: 0.1px solid rgb(190, 180, 180); /* Inner borders */
+    padding: 1rem;            /* Optional: Add padding for better spacing */
+    text-align: center;       /* Optional: Center text in cells */
+    font-size:1.7rem;
+}
+
+
+
+
+/* Ensure .value-row displays items side by side */
+.value-row {
+    display: flex;
+    justify-content: center; /* Space items evenly */
+    margin-top: 2rem; /* Space between TitleAndTable and value-row */
+    width:100%;
+    height:12rem;
+    margin-bottom:4.1rem;
+}
+
+.call-value, .put-value {
+    flex: 1; 
+    margin:0.1rem 1rem;
+    padding: 2rem; 
+    border-radius: 20px; /* Rounded corners */
+    background-color:grey;
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text horizontally */
+}
+
+.call-value{
+    background-color:#229624;
+}
+.put-value{
+    background-color: #ad1515;
+}
+
+/* Optional: Add styles for the title and value text */
+.box-title {
+    font-size: 3.5rem; /* Title font size */
+    margin-bottom:8px;
+    font-weight: 800;
+}
+
+.box-value {
+    font-size: 3rem; /* Value font size */
+    font-weight: 800;
+}
+
+/*Heatmap*/
+
+.heatmap-explain{
+    font-size:2.1rem;
+    background-color: #06334cea;
+    color:#e1f2fa;
+    padding:2rem;
+    width:100%;
+    border-radius:10px;
+    margin-top:6px;
+    margin-bottom: 10px;
+
+}
+.heatmaps-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    width: 100%;
+    margin-top: 25px;
+  }
+  
+  .sub_title_map {
+    display: flex;
+    justify-content: space-around; /* Space the subtitles evenly */
+    margin-bottom: 10px; /* Space between subtitles and heatmaps */
+    color: white;
+    padding: 0.5rem;
+  }
+
+  .fill{
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  
+  .heatmaps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; /* Space the images evenly */
+    width: 100%;
+    height: 40rem; /* Adjust height as needed */
+    margin-top: 1rem; /* Space between heatmaps and any content above */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .linkedin-icon{
     padding:8px;
-    font-size: 1.7rem; /* Adjust size */
+    font-size: 6rem; /* Adjust size */
     color: #0077b5; /* LinkedIn color */
-    margin: 0; /* Spacing around the icon */
+    margin: 6px; /* Spacing around the icon */
     text-decoration: none; /* Remove underline from link */
     box-sizing: border-box; /* Ensure padding and border are included in width */
     overflow: hidden; /* Prevent overflow */
-    margin-bottom: 5px;
+    margin-bottom: 9px;
 }
 
 .github-icon{
     padding:8px;
-    font-size: 1.7rem; /* Adjust size */
+    font-size: 6rem; /* Adjust size */
     color: white; /* LinkedIn color */
-    margin: 0; /* Spacing around the icon */
+    margin: 5px; /* Spacing around the icon */
     text-decoration: none; /* Remove underline from link */
     box-sizing: border-box; /* Ensure padding and border are included in width */
     overflow: hidden; /* Prevent overflow */
-    margin-bottom: 5px;
+    margin-bottom: 9px;
 }
 
 
@@ -101,13 +287,14 @@ html, body {
     position: relative; /* This allows the tooltip to be positioned absolutely within this container */
     display: inline-block; /* Container should only take up as much space as needed */
     cursor: pointer; /* Change cursor to indicate it's clickable */
+    margin:6px;
 }
 
 .about-text {
-    font-size: 0.8rem; /* Font size for the About text */
+    font-size: 2.5rem; /* Font size for the About text */
     color: white; /* Text color */
     padding: 5px 1.2rem; /* Padding around the text */
-    padding-bottom: 6px;
+    padding-bottom: 9px;
     border-radius: 100px; /* Round the corners of the text box */
     background-color: var(--color_main_display);; /* Background color of the text box */
     text-align: center; /* Center the text */
@@ -117,20 +304,20 @@ html, body {
 
 .tooltip {
     visibility: hidden; /* Hide the tooltip by default */
-    width: 10rem; /* Width of the tooltip */
+    width: 30rem; /* Width of the tooltip */
     background-color: black; /* Background color of the tooltip */
     color: white; /* Text color of the tooltip */
     text-align: center; /* Center the text inside the tooltip */
     border-radius: 5px; /* Round the corners of the tooltip */
     padding: 15px; /* Padding inside the tooltip */
     position: absolute; /* Position the tooltip absolutely */
-    top: 125%; /* Place the tooltip below the About text */
+    top: 140%; /* Place the tooltip below the About text */
     left: 50%; /* Center horizontally */
     margin-left: -125px; /* Adjust to center horizontally (half of tooltip width) */
     z-index: 1; /* Ensure tooltip is above other elements */
     opacity: 0; /* Initially hide the tooltip */
     transition: opacity 0.3s; /* Smooth transition for opacity */
-    font-size: 1.2rem; /* Increase the font size of the tooltip text */
+    font-size: 4rem; /* Increase the font size of the tooltip text */
 }
 
 .tooltip p {
@@ -141,3 +328,113 @@ html, body {
     visibility: visible; /* Show the tooltip on hover */
     opacity: 0.85; /* Make the tooltip fully visible */
 }
+
+/*Styles for sidebar-----------------------------------------*/
+
+
+form{
+    z-index:30;
+    font-size:2rem;
+}
+
+.form-label {
+    display: block;  
+    margin-top:15px;
+    margin-bottom:7px;
+    font-size:1.4rem;
+}
+
+.form-control {
+    border: 1.5px solid transparent;
+    border-radius:5px;
+    height:2.6rem;
+    width:23rem;
+    background-color: var(--color_main_display);
+    color:white;
+    padding:0.8rem 0.5rem;
+    font-size:1.1rem;
+    font-weight: 200;
+    transition: border-color 0.2s;
+    outline:0;
+}
+
+.form-control:focus{
+    outline:none;
+    border-color:var(--color_select_box);
+
+}
+.form-control:hover{
+    outline:0;
+    border-color: var(--color_select_box);
+    
+}
+
+
+.form-control::placeholder {
+    color: white; /* Set the color of the placeholder text to white */
+    opacity: 1; 
+}
+
+.SubTitle{
+    padding-top:2.5rem;
+    padding-bottom:0.5rem;
+    font-size:2rem;
+
+}
+.thin-white-line{
+    border: none; /* Remove default border */
+    height: 0.1px; /* Set the thickness of the line */
+    background-color: rgb(184, 169, 169); /* Line color */
+    margin: 0; /* Optional: Adjust margins as needed */
+
+}
+
+.submit{
+    display:flex;
+    flex-direction:column;
+    background-color: var(--color_select_box);
+    border:1px solid white;
+    border-radius:20px;
+    color:white;
+    height:3rem;
+    width:10rem;
+    margin:2rem;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    width:70%;
+    padding:2rem;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+input[type="range"]::-webkit-slider-thumb {
+    cursor: grab; /* Change cursor to grab */
+}
+input[type="range"]::-ms-thumb {
+    cursor: grab; /* Change cursor to grab */
+}
+
+
+
+.Title {
+    font-size: 3rem;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically (if you have multiple lines) */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center text alignment */
+    height: 100vh; /* Full viewport height (if needed for vertical centering) */
+}
+
+.bi-file-bar-graph-fill {
+    font-size: 4rem;
+    font-style: var(--color_select_box);
+}
+.icon{
+    font-size: 5rem;
+    color: var(--color_select_box);
+}
+
+
+
