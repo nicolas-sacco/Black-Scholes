@@ -47,7 +47,7 @@ html, body {
     display:flex;
     flex-direction:column;
     height: 100vh; /* Full height */
-    width: 20vw; /* 20% of viewport width */
+    width: 23vw; /* 20% of viewport width */
     background-color: var(--color_nav_bar);
     color: white;
     position: fixed;
@@ -82,7 +82,7 @@ html, body {
 }
 
 .main {
-    margin-left: 20vw; /* Offset by sidebar width */
+    margin-left: 22vw; /* Offset by sidebar width */
     margin-top: 5vh; /* Offset by top bar height */
     width: 80vw; /* 80% of viewport width */
     height: 95vh; /* 95% of viewport height */
@@ -193,7 +193,7 @@ th, td {
     background-color: #06334cea;
     color:#e1f2fa;
     padding:2rem;
-    width:100%;
+    width:90%;
     border-radius:10px;
     margin-top:6px;
     margin-bottom: 10px;
@@ -223,7 +223,7 @@ th, td {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly; /* Space the images evenly */
-    width: 100%;
+    width: 95%;
     height: 40rem; /* Adjust height as needed */
     margin-top: 1rem; /* Space between heatmaps and any content above */
   }
