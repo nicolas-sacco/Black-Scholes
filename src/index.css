@@ -304,7 +304,7 @@ th, td {
 
 .tooltip {
     visibility: hidden; /* Hide the tooltip by default */
-    width: 30rem; /* Width of the tooltip */
+    width: 50rem; /* Width of the tooltip */
     background-color: black; /* Background color of the tooltip */
     color: white; /* Text color of the tooltip */
     text-align: center; /* Center the text inside the tooltip */
@@ -313,7 +313,7 @@ th, td {
     position: absolute; /* Position the tooltip absolutely */
     top: 140%; /* Place the tooltip below the About text */
     left: 50%; /* Center horizontally */
-    margin-left: -125px; /* Adjust to center horizontally (half of tooltip width) */
+    margin-left: -250px; /* Adjust to center horizontally (half of tooltip width) */
     z-index: 1; /* Ensure tooltip is above other elements */
     opacity: 0; /* Initially hide the tooltip */
     transition: opacity 0.3s; /* Smooth transition for opacity */
@@ -326,7 +326,7 @@ th, td {
 
 .about-container:hover .tooltip {
     visibility: visible; /* Show the tooltip on hover */
-    opacity: 0.85; /* Make the tooltip fully visible */
+    opacity: 0.90; /* Make the tooltip fully visible */
 }
 
 /*Styles for sidebar-----------------------------------------*/
